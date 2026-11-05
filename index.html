@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#092c2b">
+  <meta name="description" content="The Listening Garden: a Chinese musical garden of interactive chimes, silk strings and quiet discovery.">
+  <title>The Listening Garden — A garden of sounds</title>
+  <link rel="icon" type="image/svg+xml" href="assets/listening-garden-mark.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="silk.css">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="viewport.css">
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="learn-layout.css">
+  <link rel="stylesheet" href="mobile.css">
+  <script src="viewport.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="gallery.js" defer></script>
+  <script src="garden-effects.js" defer></script>
+  <script src="string-touch.js" defer></script>
+  <script src="silk.js" defer></script>
+  <script src="silk-flowers.js" defer></script>
+  <script src="recorder.js" defer></script>
+  <script src="preferences.js" defer></script>
+  <script src="learn.js" defer></script>
+  <script src="mobile.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+      <a class="wordmark" href="#sanctuary" aria-label="The Listening Garden home"><span class="seal" aria-hidden="true">静</span><span class="garden-wordmark"><span class="garden-name">The Listening<br>Garden</span><span class="wordmark-sub">A GARDEN OF SOUNDS</span></span></a>
+      <nav class="navigation" aria-label="Scene controls">
+        <button id="home" class="nav-button active">Gate</button>
+        <button id="explore" class="nav-button">Chimes</button>
+        <button id="silk-nav" class="nav-button">Silk</button>
+        <button id="learn-nav" class="nav-button">Learn</button>
+        <button id="sound-toggle" class="nav-button" aria-label="Instrument sounds" aria-pressed="true">Sound <span class="status-dot"></span></button>
+        <button id="motion-toggle" class="nav-button" aria-label="Motion" aria-pressed="true">Motion</button>
+        <button id="fullscreen" class="nav-button full-button" aria-label="Enter fullscreen" title="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+      </nav>
+    </header>
+  <main>
+  <section id="sanctuary" aria-label="The Jade Gate, interactive musical courtyard">
+    <img id="landscape" src="assets/jade-gate.png" alt="A red Chinese gate with dark tiled roofs, white flowering trees and jade mountains in the mist" fetchpriority="high">
+    <div class="shade" aria-hidden="true"></div>
+    <canvas id="scene" aria-label="Move your pointer or finger across the doorway to stir the curtain and play chimes"></canvas>
+    <footer class="bottom">
+      <div class="hero-copy"><p class="eyebrow"><span></span> Leave the noise beyond the gate.</p><h1>Step into<br><span>a quieter world.</span></h1><p class="instruction">Stir the letters. Let your own melody unfold.</p></div>
+    </footer>
+    <a class="continue-link" href="#instruments"><span>FOLLOW THE SOUND</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 4v16m-5-5 5 5 5-5"/></svg></a>
+  </section>
+
+  <section id="instruments" class="instrument-gallery" aria-labelledby="gallery-title">
+    <img class="gallery-landscape" src="assets/moon-garden.png" alt="A moonlit jade lake and misty mountains, framed by flowering branches" loading="lazy">
+    <div class="gallery-haze" aria-hidden="true"></div>
+    <canvas id="garden-atmosphere" aria-hidden="true"></canvas>
+    <div class="gallery-intro"><p class="eyebrow"><span></span> THE LISTENING GARDEN</p><h2 id="gallery-title">Different roofs.<br><em>The same sky.</em></h2><p class="gallery-description">Three places. Three voices.<br>A little room for your own rhythm.</p></div>
+
+    <div class="instrument-display" id="instrument-display" role="group" aria-label="Playable instruments">
+      <div class="instrument-stage" id="instrument-stage" tabindex="0" role="group" aria-label="Golden courtyard. Drag across the hanging letters to play, or use keys A S D F G H J K." aria-describedby="play-hint">
+        <div class="instrument-halo" aria-hidden="true"></div>
+        <canvas id="strings" aria-label="Interactive hanging letter strings"></canvas>
+        <div class="roof-sculpture roof-gold" id="roof-sculpture" role="img" aria-label="Golden Chinese pagoda roof"></div>
+        <div class="instrument-reflection" aria-hidden="true"></div>
+      </div>
+      <button class="gallery-arrow previous" id="previous-instrument" aria-label="Previous instrument"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+      <button class="gallery-arrow next" id="next-instrument" aria-label="Next instrument"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg></button>
+    </div>
+
+    <div class="instrument-story" id="instrument-story" aria-live="polite" aria-atomic="true">
+      <p class="place-label" id="place-label">CHINA · 缘</p>
+      <h3 id="instrument-title">Golden<br>courtyard</h3>
+      <p id="instrument-description">Warm bronze tones beneath golden eaves. Brush a passing thought into the wind.</p>
+      <span class="voice-label" id="voice-label">THE VOICE OF BRONZE</span>
+    </div>
+
+    <div class="gallery-bottom">
+      <p id="play-hint" class="play-hint">Touch the strings.<span>Or play A S D F G H J K</span></p>
+      <div class="instrument-picker" role="group" aria-label="Choose an instrument">
+        <button class="instrument-choice selected" data-instrument="0" aria-pressed="true"><span class="choice-mark">金</span><span>Golden eaves</span></button>
+        <button class="instrument-choice" data-instrument="1" aria-pressed="false"><span class="choice-mark">朱</span><span>Red rain</span></button>
+        <button class="instrument-choice" data-instrument="2" aria-pressed="false"><span class="choice-mark">風</span><span>Steppe wind</span></button>
+      </div>
+      <a class="garden-footnote silk-next-link" href="#silk">DISCOVER SILK INSTRUMENTS <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <section id="silk" class="silk-gallery" aria-labelledby="silk-heading" data-kind="guqin">
+    <img class="silk-background" src="assets/silk-garden.png" alt="A quiet Chinese pavilion overlooking misty mountains and a jade lake" loading="lazy">
+    <div class="silk-shade" aria-hidden="true"></div>
+    <div id="silk-flowers" class="silk-flowers" aria-hidden="true"></div>
+    <div class="silk-heading"><p class="silk-eyebrow">絲 <span>THE SILK COLLECTION</span></p><h2 id="silk-heading">A thousand stories.<br><em>A single string.</em></h2></div>
+    <div class="silk-details" aria-live="polite" aria-atomic="true">
+      <p id="silk-native">古琴 · Гуцинь</p>
+      <h3 id="silk-title">Guqin</h3>
+      <p class="silk-meta" id="silk-meta">7 STRINGS · PLUCKED ZITHER</p>
+      <p class="silk-description" id="silk-description">Quiet, resonant and unhurried. Seven strings for a conversation with yourself.</p>
+    </div>
+    <div class="silk-performance" id="silk-performance">
+      <div class="silk-stage" id="silk-stage" role="group" tabindex="0" aria-label="Play Guqin. Pluck seven strings or use A S D F G H J." aria-describedby="silk-hint">
+        <div class="silk-aura" aria-hidden="true"></div>
+        <img id="silk-instrument" class="silk-instrument" src="assets/guqin.png" alt="Traditional seven-string guqin with a dark lacquered body" loading="lazy" draggable="false">
+        <svg id="silk-strings" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-label="Playable strings"></svg>
+      </div>
+      <button class="silk-arrow silk-previous" id="silk-previous" aria-label="Previous silk instrument">‹</button>
+      <button class="silk-arrow silk-next" id="silk-next" aria-label="Next silk instrument">›</button>
+    </div>
+    <div class="silk-controls">
+      <div class="silk-techniques" role="group" aria-label="Playing technique"><button data-technique="open" aria-pressed="false">Open</button><button data-technique="press" aria-pressed="true">Press & slide</button><button data-technique="harmonic" aria-pressed="false">Harmonics</button></div>
+      <output id="silk-feedback" class="silk-feedback" aria-label="Played note">Touch along a string to choose its pitch.</output>
+      <p class="silk-hint" id="silk-hint">Brush across the seven strings.<span> Or play A S D F G H J.</span></p>
+      <div class="silk-notes" id="silk-notes" role="group" aria-label="Playable notes"></div>
+      <div class="silk-picker" role="group" aria-label="Choose a silk instrument">
+        <button data-silk="guqin" class="silk-choice selected" aria-pressed="true"><span>古琴</span>Guqin</button>
+        <button data-silk="guzheng" class="silk-choice" aria-pressed="false"><span>古筝</span>Guzheng</button>
+        <button data-silk="pipa" class="silk-choice" aria-pressed="false"><span>琵琶</span>Pipa</button>
+        <button data-silk="erhu" class="silk-choice" aria-pressed="false"><span>二胡</span>Erhu</button>
+      </div>
+    </div>
+  </section>
+  <section id="learn" class="learning-garden" aria-labelledby="learn-title">
+    <img class="learn-background" src="assets/silk-garden.png" alt="" loading="lazy">
+    <div class="learn-layout">
+      <header class="learn-intro"><p class="silk-eyebrow">習 <span>A MOMENT TO LEARN</span></p><h2 id="learn-title">Small gestures. <br><em>Beautiful beginnings.</em></h2><p>Find your first notes in the garden.</p></header>
+      <div class="lesson-card">
+        <div class="lesson-tabs" role="group" aria-label="Choose a lesson"><button data-lesson="0" aria-pressed="true">01 · Touch</button><button data-lesson="1" aria-pressed="false">02 · Melody</button><button data-lesson="2" aria-pressed="false">03 · Keep it</button></div>
+        <h3 id="lesson-title">Meet the strings.</h3><p id="lesson-description">Tap a string or use A S D F G H J. Each string has its own voice. Background music can stay off.</p>
+        <div class="lesson-actions"><button id="lesson-demo" class="quiet-button">Hear the phrase</button><button id="lesson-restart" class="quiet-button" hidden>Start again</button><button id="lesson-record" class="quiet-button" hidden>Open recorder</button></div>
+        <div id="lesson-progress" class="lesson-progress" aria-label="Melody progress" hidden></div>
+        <output id="lesson-status" aria-live="polite">Try any string below.</output>
+      </div>
+      <div class="practice-area" id="practice-area" role="group" aria-label="Practice guqin">
+        <div class="practice-caption"><strong id="practice-name">GUQIN</strong> <span id="practice-caption">Seven open strings · C D F G A C D</span><span id="practice-count" class="practice-count">01 / 04</span></div>
+        <div class="practice-visual"><button id="learn-previous" class="learn-arrow" aria-label="Previous learning instrument">‹</button><div id="practice-instrument" class="practice-instrument"><img id="practice-art" src="assets/guqin.png" alt="Seven-string guqin for guided practice" loading="lazy"><svg id="practice-strings" class="practice-strings" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-label="Practice strings"></svg></div><button id="learn-next" class="learn-arrow" aria-label="Next learning instrument">›</button></div>
+        <div id="practice-keys" class="practice-keys" role="group" aria-label="Practice notes"></div>
+        <div class="learn-picker" role="group" aria-label="Choose a learning instrument"><button data-learn-instrument="guqin" aria-pressed="true"><span>古琴</span> Guqin</button><button data-learn-instrument="guzheng" aria-pressed="false"><span>古筝</span> Guzheng</button><button data-learn-instrument="pipa" aria-pressed="false"><span>琵琶</span> Pipa</button><button data-learn-instrument="erhu" aria-pressed="false"><span>二胡</span> Erhu</button></div>
+        <p id="practice-tip" class="practice-tip">In Silk: slide along a string to change pitch. Try Harmonics on the guqin for a bell-like tone.</p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+      <section class="audio-area" aria-label="Music player">
+
+        <div id="record-panel" class="sound-settings record-panel" hidden>
+          <div class="settings-heading"><span>Keep a little melody</span><button id="close-recorder" class="icon-button" aria-label="Close recorder">×</button></div>
+          <p class="panel-copy">Record the garden’s audio as you play. No microphone needed.</p>
+          <label class="check-label"><span>Include background music</span><input id="record-backing" type="checkbox"></label>
+          <button id="record-start" class="record-primary"><span class="record-dot"></span><span id="record-action">Start recording</span></button>
+          <p id="record-status" class="panel-copy" role="status">Up to 5 minutes. Download your take before leaving.</p>
+          <div id="record-take" hidden><label class="take-label" for="take-name">Your melody</label><input id="take-name" maxlength="70" value="A moment in the garden" aria-label="Recording name"><audio id="take-preview" preload="metadata" hidden></audio><div class="take-player"><button id="take-listen" class="quiet-button" aria-label="Play recording">Play take</button><input id="take-seek" type="range" min="0" max="100" value="0" aria-label="Recording position"><span id="take-clock">0:00</span></div><a id="take-download" class="quiet-button take-download" download>Download melody</a><p id="take-format" class="panel-copy"></p></div>
+        </div>
+        <div class="sound-settings" id="sound-settings" hidden>
+          <div class="settings-heading"><span>Your soundscape</span><button id="close-settings" class="icon-button" aria-label="Close sound settings">×</button></div>
+          <label class="range-label" for="music-volume">Music volume <output id="music-volume-value">45%</output></label>
+          <input id="music-volume" type="range" min="0" max="100" value="45" aria-label="Music volume">
+          <label class="range-label" for="instrument-volume">Instrument volume <output id="instrument-volume-value">65%</output></label>
+          <input id="instrument-volume" type="range" min="0" max="100" value="65" aria-label="Instrument volume">
+          <label class="check-label"><span>Background music</span><input id="background-music" type="checkbox"></label>
+          <label class="check-label"><span>Instrument sounds</span><input id="chimes" type="checkbox" checked></label>
+          <label class="check-label"><span>Animation</span><input id="motion-setting" type="checkbox" checked></label>
+          <div class="file-style-settings"><label class="check-label"><span>Chinese ambience <small>Your uploaded music</small></span><input id="file-style" type="checkbox" disabled></label><div id="file-style-controls" hidden><div class="audio-compare" role="group" aria-label="Compare uploaded music"><button id="file-original" aria-pressed="true">Original</button><button id="file-garden" aria-pressed="false">Garden</button></div><output id="file-style-status" aria-live="polite">Original · effect off</output><label class="range-label" for="file-style-amount">Effect blend <output id="file-style-value">75%</output></label><input id="file-style-amount" type="range" min="0" max="100" value="75" aria-label="Chinese ambience blend"></div><p id="file-style-hint">Open your music to add a softer tone and pavilion echo. Melody and key stay unchanged.</p></div>
+          <div class="preference-settings"><label class="check-label"><span>Remember my settings</span><input id="remember-settings" type="checkbox"></label><p id="preference-status" class="panel-copy" role="status">Save sound, motion and instrument choices on this device.</p><button id="forget-settings" class="text-button" hidden>Forget saved settings</button></div>
+          <div class="track-actions"><button id="ambient-track">Jade garden</button><button id="open-file" class="upload-label">Open your music <span>＋</span></button><input id="audio-file" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a,.flac" hidden></div>
+          <p id="audio-message" role="status">Play the instruments with or without background music.</p>
+        </div>
+        <div class="player">
+          <button id="play" class="play-button" aria-label="Play music"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button>
+          <div class="track-info"><span class="track-category" id="track-category">BACKGROUND MUSIC</span><span id="track-name">Jade garden</span></div>
+          <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <button id="record-chip" title="Record your playing" class="record-chip" aria-label="Open recorder" aria-expanded="false" aria-controls="record-panel"><span class="record-dot"></span><span id="record-chip-label">Record a moment</span></button>
+          <button id="settings" class="icon-button settings-button" aria-label="Sound settings" aria-expanded="false" aria-controls="sound-settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5" fill="#153b35"/><circle cx="15" cy="17" r="2.5" fill="#153b35"/></svg></button>
+        </div>
+        <div class="seek-row" id="seek-row" hidden><span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="100" value="0" aria-label="Track position"><span id="duration">0:00</span></div>
+        <p class="player-caption" id="player-caption">MUSIC OFF · INSTRUMENTS READY</p>
+      </section>
+    <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

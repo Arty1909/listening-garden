@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" fill="none">
+  <title>The Listening Garden — A garden of sounds</title>
+  <rect x="46" y="30" width="68" height="86" rx="2" stroke="#b3ceb9" stroke-width="2"/>
+  <text x="80" y="92" text-anchor="middle" font-family="serif" font-size="58" fill="#eee8d3">静</text>
+  <g fill="#eee8d3" font-family="Georgia, 'Times New Roman', serif" font-size="39" letter-spacing="-.8">
+    <text x="151" y="63">The Listening</text><text x="151" y="101">Garden</text>
+  </g>
+  <text x="153" y="125" fill="#b4c8b8" font-family="Arial, sans-serif" font-size="8" letter-spacing="3.2">A GARDEN OF SOUNDS</text>
+</svg>

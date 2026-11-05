@@ -1,0 +1,104 @@
+/* Small floating tools; the garden remains the focus. */
+.sound-settings{max-height:min(440px,55dvh);overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6d8e7b #0a2825;scroll-padding-top:55px}
+.settings-heading{position:sticky;top:-18px;background:#081d19;z-index:2;padding:12px 0;margin-top:-12px;border-bottom:1px solid #c5dfbd1c}
+.panel-copy{font-size:11px;line-height:1.6;color:#a4bfae;margin:8px 0 12px}
+.preference-settings{border-top:1px solid #c5dfbd26;margin-top:12px;padding-top:10px}
+.text-button{background:none;border:0;padding:3px 0;color:#c5d8be;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+.record-chip{position:absolute;right:0;bottom:calc(100% + 10px);display:flex;align-items:center;gap:8px;min-height:32px;padding:7px 13px;border:1px solid #c9dcc22b;border-radius:22px;background:#092b27e8;color:#c4d4bf;font:10px LocalMono,monospace;backdrop-filter:blur(14px)}
+.record-dot{display:inline-block;width:7px;height:7px;border:1px solid #d8c29d;border-radius:50%;flex:none}
+.is-recording .record-chip{border-color:#d4a48b80;color:#f0d3bb}.is-recording .record-dot{background:#d98e78;border-color:#d98e78;box-shadow:0 0 8px #d98e7850}
+.record-panel{bottom:calc(100% + 43px)}
+.record-primary{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:42px;margin:12px 0;border:1px solid #cbb68c59;border-radius:9px;background:#dbcaa8;color:#16392d;font-size:12px}.record-primary .record-dot{border-color:#694f3f}.is-recording .record-primary{background:#4b3029;color:#f2d5bd}
+.take-label{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#a5bba8;margin-top:15px}
+#take-name{width:100%;padding:9px 0;background:transparent;color:#e2dec8;border:0;border-bottom:1px solid #c5dfbd33;font:17px Georgia,serif;margin-bottom:10px}
+#take-preview{display:block;width:100%;height:38px;margin:8px 0 12px;color-scheme:dark}
+.quiet-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:9px 15px;border:1px solid #c6d7bc42;border-radius:22px;background:#b8d2b80c;color:#d4e0cc;text-decoration:none;font-size:11px}.quiet-button:hover{background:#c9dcb91c}.take-download{width:100%}
+#learn{height:100vh;height:100dvh;min-height:0;position:relative;isolation:isolate;overflow:hidden;background:#061f21;scroll-snap-align:start;scroll-snap-stop:always;overflow-anchor:none}
+.learn-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;filter:brightness(.47) saturate(.7)}
+.learning-garden::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#041b20bd,transparent 80%),linear-gradient(0deg,#041b20b5,transparent 60%)}
+.learn-layout{height:100%;padding:125px 6% 160px;display:grid;grid-template-columns:.9fr 1.1fr;grid-template-rows:auto 1fr;column-gap:7%;row-gap:35px}
+.learn-intro h2{font:400 clamp(32px,3.2vw,49px)/1.08 Georgia,serif;letter-spacing:-1.8px;color:#e9e5d3;margin:0}.learn-intro h2 em{color:#acc8b6}.learn-intro>p:last-child{font-size:12px;color:#adc3b5;margin-top:20px}
+.lesson-card{align-self:start;padding:22px 26px;border:1px solid #c2d5bd2a;border-radius:18px;background:#082825ab;backdrop-filter:blur(14px)}
+.lesson-tabs{display:flex;gap:5px}.lesson-tabs button{flex:1;min-height:36px;font-size:10px;background:transparent;color:#a8c0af;border:1px solid transparent;border-radius:20px;white-space:nowrap;padding:7px 9px}.lesson-tabs button[aria-pressed=true]{color:#203b2c;background:#d7d6b9}
+.lesson-card h3{font:26px Georgia,serif;color:#e9e4cc;margin:20px 0 10px}.lesson-card>p{font-size:12px;line-height:1.75;color:#b5cbbb;max-width:440px;margin:0 0 15px}
+.lesson-actions{display:flex;gap:8px;flex-wrap:wrap}.lesson-card output{display:block;min-height:32px;font:10px/1.6 LocalMono,monospace;color:#c7bb9b;margin-top:13px}
+.lesson-progress{display:flex;gap:6px;margin-top:12px}.lesson-progress span{display:grid;place-items:center;width:23px;height:23px;border:1px solid #bad3ba33;border-radius:50%;font:9px LocalMono,monospace;color:#799a87}.lesson-progress .done{background:#b9ccb4;color:#173629}.lesson-progress .next{border-color:#e6c894;color:#e6c894}
+.practice-area{grid-column:1/-1;align-self:center;min-height:0}.practice-caption{font:10px LocalMono,monospace;letter-spacing:2px;color:#d1ba91;display:flex;align-items:center;gap:22px}.practice-caption span{font-size:9px;letter-spacing:.4px;color:#9fb7a7}
+.practice-instrument{position:relative;height:clamp(100px,17dvh,180px);margin:10px auto;width:90%}.practice-instrument>img{width:100%;height:100%;object-fit:fill;pointer-events:none;filter:drop-shadow(0 13px 20px #0009)}
+.practice-strings{position:absolute;left:10%;right:6%;top:29%;height:42%;display:flex;flex-direction:column;gap:0;transform:rotate(.4deg)}
+.practice-string{position:relative;flex:1;border:0;background:transparent;padding:0;min-height:0;touch-action:manipulation}.practice-string::after{content:'';position:absolute;top:50%;height:1px;left:0;right:0;background:#e7d0a255;transition:background .2s,box-shadow .2s}.practice-string.expected::after{background:#ffe3a8;box-shadow:0 0 7px #ffdb8860}.practice-string.sounding::after{background:#fff1c7;box-shadow:0 0 10px #ffe8b6}
+.practice-keys{display:flex;justify-content:center;gap:9px}.practice-key{min-width:48px;min-height:46px;padding:6px 12px;border:1px solid #cbd9bd40;border-radius:9px;background:#082b2ccc;color:#b5c7b5;font:12px LocalMono,monospace;transition:background .2s,border-color .2s}.practice-key small{display:block;font:8px Arial,sans-serif;margin-top:4px;color:#789f86}.practice-key.expected{border-color:#d9c293;color:#f0d9aa;box-shadow:0 0 15px #d9c29318}.practice-key.sounding{background:#e5d3ab;color:#163a2b}.practice-tip{text-align:center;font-size:10px;line-height:1.5;color:#8fae9c;margin:14px 0 0}
+@media(min-width:651px) and (max-width:1150px){.topbar{gap:14px}.topbar .nav-button{padding:9px 10px}.learn-layout{padding-top:115px;column-gap:4%;padding-left:4%;padding-right:4%}.learn-intro h2{font-size:35px}.lesson-card{padding:17px}.practice-instrument{height:140px}}
+@media(max-width:650px){
+  .sound-settings{max-height:min(400px,52dvh)}.settings-heading{top:-18px}
+  .record-chip{min-height:30px;font-size:9px;padding:6px 11px;bottom:calc(100% + 8px)}
+  .topbar{gap:8px}.topbar .nav-button{padding:8px 9px;font-size:10px}.topbar .navigation{padding:3px;gap:0}.topbar #sound-toggle{min-width:30px;padding:7px}
+  .learn-layout{display:flex;flex-direction:column;gap:14px;padding:82px 20px 148px}
+  .learn-intro .silk-eyebrow{font-size:17px;margin-bottom:7px}.learn-intro h2{font-size:27px;letter-spacing:-1px}.learn-intro h2 br{display:none}.learn-intro>p:last-child{display:none}
+  .lesson-card{width:100%;padding:13px 15px;border-radius:14px}.lesson-tabs button{min-height:33px;padding:6px;font-size:9px}.lesson-card h3{font-size:22px;margin:11px 0 8px}.lesson-card>p{font-size:11px;line-height:1.55;margin-bottom:11px}.lesson-card output{font-size:9px;margin-top:10px;min-height:28px}.lesson-actions .quiet-button{min-height:34px;padding:7px 11px;font-size:10px}
+  .practice-area{width:100%;margin:auto 0;align-self:auto}.practice-caption{justify-content:center;font-size:8px;gap:10px;letter-spacing:1px}.practice-caption span{font-size:7px}.practice-instrument{height:100px;width:100%;margin:5px auto}.practice-keys{gap:5px}.practice-key{min-width:0;flex:1;min-height:42px;font-size:10px;padding:5px}.practice-tip{font-size:8px;margin:9px 0 0}.lesson-progress{margin-top:9px}
+}
+@media(max-width:360px){.topbar{padding-left:12px;padding-right:12px;gap:5px}.topbar .nav-button{padding:8px 7px;font-size:9px}.wordmark .seal{width:25px;height:31px}.learn-layout{padding-left:15px;padding-right:15px}.learn-intro h2{font-size:23px}}
+@media(max-width:650px) and (max-height:740px){.learn-layout{padding-top:74px;gap:9px}.learn-intro h2{font-size:23px}.learn-intro .silk-eyebrow{display:none}.lesson-card{padding:10px 12px}.lesson-card h3{font-size:20px;margin:8px 0 6px}.lesson-card>p{font-size:10px;line-height:1.45;margin-bottom:8px}.lesson-card output{margin-top:7px;min-height:24px;font-size:8px}.practice-instrument{height:76px}.practice-tip{display:none}.practice-key{min-height:38px}.practice-caption span{display:none}}
+@media(max-width:650px) and (max-height:620px){.learn-layout{padding-bottom:145px;gap:6px}.learn-intro{display:none}.lesson-card h3{font-size:18px}.lesson-tabs button{min-height:29px}.lesson-card .quiet-button{min-height:30px}.practice-instrument{height:64px}.practice-caption{display:none}.lesson-progress span{width:18px;height:18px}.lesson-progress{margin-top:5px}}
+@media(min-width:651px) and (max-height:760px){.learn-layout{padding-top:100px;padding-bottom:135px;row-gap:12px}.learn-intro h2{font-size:34px}.lesson-card{padding:14px 20px}.lesson-card h3{margin:12px 0 8px}.lesson-card output{min-height:20px}.practice-instrument{height:13dvh}.practice-tip{display:none}}
+@media(min-width:651px) and (max-height:550px){
+  .learn-layout{padding:75px 24px 95px;grid-template-columns:1fr 1fr;gap:14px}.learn-intro{display:none}.lesson-card{grid-column:2;grid-row:1;padding:10px 13px}.lesson-card h3{font-size:20px;margin:9px 0 6px}.lesson-card>p{font-size:10px;line-height:1.4;margin-bottom:8px}.lesson-tabs button{font-size:8px;min-height:29px}.lesson-card output{font-size:8px;min-height:18px;margin-top:6px}.lesson-actions .quiet-button{font-size:9px;min-height:30px;padding:6px 10px}.lesson-progress{margin-top:5px}.lesson-progress span{width:18px;height:18px}.practice-area{grid-column:1;grid-row:1;align-self:center}.practice-caption{font-size:8px}.practice-caption span{display:none}.practice-instrument{height:95px;width:100%}.practice-keys{gap:4px}.practice-key{min-width:0;flex:1;padding:5px;font-size:9px;min-height:38px}.sound-settings{max-height:52dvh}
+}
+@media(prefers-reduced-motion:reduce){.practice-key,.practice-string::after{transition:none}}
+.still .practice-key,.still .practice-string::after{transition:none}
+
+/* The recorder is a small control inside the existing player. */
+.record-chip{position:static;width:30px;min-width:30px;height:32px;min-height:32px;padding:0;justify-content:center;border-color:#c9dcc22b;border-radius:50%;font-size:0;flex:none;gap:0}
+.record-chip #record-chip-label{display:none}.is-recording .record-chip{width:49px;border-radius:18px;gap:4px}.is-recording .record-chip #record-chip-label{display:inline;font:8px LocalMono,monospace}.is-recording .record-chip .record-dot{width:5px;height:5px}
+.record-panel{bottom:100%}.player{gap:10px}.player .equalizer{display:none}
+@media(max-width:650px){.record-chip{width:36px;min-width:36px;height:40px;border-radius:9px}.is-recording .record-chip{width:49px}.player{gap:8px}}
+
+@media(max-width:650px){.practice-key{min-height:44px}}
+
+.take-player{display:flex;align-items:center;gap:8px;margin:10px 0 15px}.take-player .quiet-button{flex:none;padding:7px 11px;min-height:36px}.take-player input{margin:0!important;min-width:0}.take-player span{font:9px LocalMono,monospace;color:#a4bfae;flex:none}
+
+/* Learning instrument carousel mirrors the Silk gallery. */
+.learn-layout{padding-bottom:125px;row-gap:20px}
+.practice-caption strong{font:inherit}.practice-count{margin-left:auto;white-space:nowrap}
+.practice-visual{position:relative;perspective:1100px}
+.practice-instrument{width:88%;margin:9px auto;height:clamp(90px,15dvh,160px);transform-origin:center;touch-action:none}
+.practice-strings{position:absolute;inset:0;width:100%;height:100%;display:block;transform:none;overflow:visible}
+.practice-hit{stroke:transparent;stroke-width:22;fill:none;pointer-events:stroke;cursor:crosshair;touch-action:none}
+.practice-wire{fill:none;stroke:#e7d0a255;stroke-width:1;pointer-events:none}.practice-wire.expected{stroke:#ffe3a8;stroke-width:1.8;filter:drop-shadow(0 0 3px #ffdb8870)}.practice-wire.sounding{stroke:#fff1c7;stroke-width:2;filter:drop-shadow(0 0 5px #ffe8b6)}
+.practice-hit:focus-visible{outline:none;stroke:#d2e3be88;stroke-width:8}
+.learn-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;display:grid;place-items:center;border:1px solid #c9d8bd40;border-radius:50%;background:#082b2cab;color:#d7e0c8;font:27px Georgia,serif;z-index:2}.learn-arrow:hover{background:#c2d3b625}#learn-previous{left:0}#learn-next{right:0}
+.learn-picker{display:flex;justify-content:center;gap:4px;border:1px solid #cbdcc12b;border-radius:30px;padding:4px;margin:12px auto 0;width:max-content;max-width:100%;background:#072a2dc9;backdrop-filter:blur(14px)}
+.learn-picker button{border:0;border-radius:25px;background:transparent;color:#aec4b3;padding:9px 17px;min-height:36px;font-size:11px;white-space:nowrap}.learn-picker button span{font:11px Georgia,serif;color:#c7b58d;margin-right:5px}.learn-picker button[aria-pressed=true]{background:#e0d7ba;color:#17392e}.learn-picker button[aria-pressed=true] span{color:#4b6854}
+.practice-keys{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#8aaa8f45 transparent;padding:3px 0 5px;touch-action:pan-x}.practice-key{flex-shrink:0}.practice-tip{margin-top:9px}
+#learn[data-practice-kind=guzheng] .practice-keys{justify-content:flex-start;width:min(680px,100%);margin:auto}#learn[data-practice-kind=guzheng] .practice-key{min-width:42px;flex:0 0 42px}
+#learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:clamp(140px,23dvh,230px);width:min(650px,88%)}
+#learn[data-practice-kind=pipa] .practice-instrument>img,#learn[data-practice-kind=erhu] .practice-instrument>img{position:absolute;left:32%;top:1%;width:36%;height:96%;object-fit:fill}
+@media(max-width:650px){
+  .learn-layout{padding-bottom:123px;gap:10px}.practice-instrument{height:90px;width:85%;margin:4px auto}.learn-arrow{width:34px;height:38px;font-size:25px}
+  .learn-picker{width:100%;margin-top:7px;gap:2px;padding:3px}.learn-picker button{flex:1;padding:8px 5px;font-size:10px;min-height:36px}.learn-picker button span{display:none}.practice-count{display:inline!important;font-size:8px!important;margin-left:auto}
+  .practice-caption{justify-content:flex-start}.practice-caption span:not(.practice-count){font-size:7px;letter-spacing:0}.practice-keys{gap:4px}.practice-key{max-width:55px}
+  #learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:145px;width:90%}
+  #learn[data-practice-kind=pipa] .practice-instrument>img,#learn[data-practice-kind=erhu] .practice-instrument>img{left:32%;width:36%}
+  #learn[data-practice-kind=pipa] .practice-tip,#learn[data-practice-kind=erhu] .practice-tip{display:none}
+}
+@media(max-width:650px) and (max-height:740px){
+  .learn-intro{display:none}.learn-layout{gap:7px}.practice-instrument{height:65px}.practice-area{margin:auto 0}.practice-tip{display:none}.practice-caption{display:flex;font-size:8px}.practice-caption span:not(.practice-count){display:none}
+  #learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:110px}
+}
+@media(max-width:650px) and (max-height:620px){
+  .learn-layout{padding-bottom:118px}.practice-caption{display:none}.practice-instrument{height:52px}.practice-keys{padding:0}.learn-picker{margin-top:4px}.learn-picker button{min-height:32px;padding:6px 4px;font-size:9px}
+  #learn[data-practice-kind=pipa] .practice-area,#learn[data-practice-kind=erhu] .practice-area{display:grid;grid-template-columns:42% 58%;gap:5px;align-items:center}
+  #learn[data-practice-kind=pipa] .practice-visual,#learn[data-practice-kind=erhu] .practice-visual{grid-column:1;grid-row:1;width:100%}
+  #learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:90px;width:90%}
+  #learn[data-practice-kind=pipa] .practice-instrument>img,#learn[data-practice-kind=erhu] .practice-instrument>img{left:20%;width:60%}
+  #learn[data-practice-kind=pipa] .learn-arrow,#learn[data-practice-kind=erhu] .learn-arrow{width:25px;height:32px;font-size:21px}
+  #learn[data-practice-kind=pipa] .practice-keys,#learn[data-practice-kind=erhu] .practice-keys{grid-column:2;grid-row:1;flex-wrap:wrap;gap:5px;justify-content:center}
+  #learn[data-practice-kind=pipa] .practice-key,#learn[data-practice-kind=erhu] .practice-key{flex:0 0 42%;max-width:58px}
+  #learn[data-practice-kind=pipa] .learn-picker,#learn[data-practice-kind=erhu] .learn-picker{grid-column:1/-1;grid-row:2}
+}
+@media(min-width:651px) and (max-height:760px){.practice-instrument{height:11dvh}.learn-picker{margin-top:6px}.learn-picker button{padding:7px 14px}.practice-tip{display:none}#learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:18dvh}.learn-intro h2{font-size:30px}}
+@media(min-width:651px) and (max-height:550px){
+  .learn-layout{padding-bottom:90px}.practice-instrument{height:85px}.practice-caption{font-size:8px}.practice-caption span:not(.practice-count){display:none}.practice-key{min-width:0}.learn-picker{margin-top:6px;width:100%}.learn-picker button{padding:6px;flex:1;font-size:9px;min-height:31px}.learn-picker button span{display:none}
+  #learn[data-practice-kind=pipa] .practice-instrument,#learn[data-practice-kind=erhu] .practice-instrument{height:110px}.learn-arrow{width:30px;height:34px}
+}

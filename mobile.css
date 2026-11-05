@@ -1,0 +1,136 @@
+/* Phone-only composition. Desktop styles remain in their existing stylesheets. */
+@media(max-width:650px){
+  :root{--mobile-dock:calc(88px + env(safe-area-inset-bottom));--mobile-top:calc(72px + env(safe-area-inset-top));-webkit-text-size-adjust:100%}
+  body .topbar{padding:calc(10px + env(safe-area-inset-top)) 14px 8px;gap:10px;align-items:center;background:linear-gradient(#061e20 65%,#061e2000)}
+  body .topbar .navigation{padding:3px;gap:0;min-width:0;background:#082826f2;backdrop-filter:none}
+  body .topbar .nav-button{min-height:44px;padding:8px 12px;font-size:11px}
+  body .topbar #sound-toggle{padding:8px;min-width:38px}
+  body .topbar #motion-toggle,body .topbar #fullscreen{display:none}
+  body .audio-area{left:12px;right:12px;width:auto;max-width:none;bottom:calc(8px + env(safe-area-inset-bottom))}
+  body .player{padding:8px 10px;gap:8px;border-radius:15px;background:#082821f5;backdrop-filter:none}
+  body .player-caption{display:none}
+  body .track-info{gap:4px}body #track-name{font-size:12px}body .track-category{font-size:7px;letter-spacing:.7px}
+  body .audio-area .play-button,body .audio-area .icon-button,body .audio-area .record-chip{min-width:44px;width:44px;height:44px;min-height:44px}
+  body .sound-settings{max-height:min(440px,60dvh);margin-bottom:8px;background:#08251ffb;backdrop-filter:none;scrollbar-width:thin}
+  body .sound-settings input:not([type=range]):not([type=checkbox]){font-size:16px}
+  body .toast{bottom:var(--mobile-dock);font-size:11px}
+  body main>section{height:100dvh;min-height:0;overflow:hidden}
+
+  /* Copy sits above the gate; the entire doorway remains touchable. */
+  #sanctuary .bottom{top:var(--mobile-top);left:20px;right:20px;bottom:auto;display:block}
+  #sanctuary .hero-copy{max-width:none;text-align:center}
+  #sanctuary .eyebrow{display:none}
+  #sanctuary h1{font:28px/1.12 Georgia,serif;letter-spacing:-.8px}
+  #sanctuary h1 br{display:none}
+  #sanctuary h1 span{display:block}
+  #sanctuary .instruction{font-size:11px;letter-spacing:0;margin:8px 0 0}
+  #sanctuary #landscape,#sanctuary #scene{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:none}
+  #sanctuary .shade{background:linear-gradient(#061e2099,transparent 30%,transparent 73%,#061e20c9);pointer-events:none}
+  #sanctuary #scene{touch-action:none}
+  #sanctuary .continue-link{left:50%;right:auto;bottom:var(--mobile-dock);min-height:32px;flex-direction:row;gap:8px;font-size:8px;transform:translateX(-50%)}
+  #sanctuary .continue-link svg{height:18px}
+
+  /* Chimes: compact heading, dedicated stage, then selection. */
+  #instruments .gallery-intro{left:18px;right:18px;top:var(--mobile-top);max-width:none;text-align:center}
+  #instruments .gallery-intro .eyebrow,#instruments .gallery-description{display:none}
+  #instruments .gallery-intro h2{font-size:24px;line-height:1.1;letter-spacing:-.6px}
+  #instruments .gallery-intro h2 br{display:none}
+  #instruments .gallery-intro h2 em::before{content:' '}
+  #instruments .instrument-story{left:18px;right:18px;top:calc(var(--mobile-top) + 36px);width:auto;text-align:center;pointer-events:none}
+  #instruments .instrument-story h3{font:12px/1.2 Arial,sans-serif;letter-spacing:.6px;margin:0;color:#d6c79e}
+  #instruments .instrument-story h3 br{display:none}
+  #instruments .instrument-story>p,#instruments .voice-label{display:none}
+  #instruments .instrument-display{top:calc(var(--mobile-top) + 68px);bottom:calc(var(--mobile-dock) + 116px);left:12px;width:calc(100% - 24px);height:auto;transform:none;display:grid;place-items:center}
+  #instruments .instrument-stage{width:auto;height:100%;max-height:440px;max-width:100%;aspect-ratio:600/720}
+  #instruments .gallery-arrow{width:44px;height:44px;top:50%;transform:translateY(-50%);background:#082b2ce6}
+  #instruments .gallery-arrow.previous{left:0}#instruments .gallery-arrow.next{right:0}
+  #instruments .gallery-bottom{left:14px;right:14px;bottom:var(--mobile-dock);transform:none;width:auto;max-width:none}
+  #instruments .play-hint{font-size:12px;margin:0 0 7px;line-height:1.4}
+  #instruments .instrument-picker{background:#082826ee;backdrop-filter:none;border-radius:24px}
+  #instruments .instrument-choice{min-height:44px;font-size:10px;padding:7px 5px;gap:5px}
+  #instruments .silk-next-link{display:block;margin:8px 0 0;min-height:26px;line-height:26px;font-size:8px}
+
+  /* Silk: source proportions, no text placed over the playing surface. */
+  #silk[data-kind] .silk-heading{top:var(--mobile-top);left:18px;right:18px;text-align:left}
+  #silk[data-kind] .silk-heading h2{display:none}
+  #silk[data-kind] .silk-eyebrow{font-size:20px;margin:0}
+  #silk[data-kind] .silk-eyebrow span{font-size:8px}
+  #silk[data-kind] .silk-details{top:var(--mobile-top);right:18px;left:auto;bottom:auto;width:auto;max-width:50%;text-align:right}
+  #silk[data-kind] .silk-details h3{font-size:26px;margin:0 0 6px}
+  #silk[data-kind] #silk-native,#silk[data-kind] .silk-description,#silk[data-kind] .silk-meta{display:none}
+  #silk[data-kind] .silk-performance{top:calc(var(--mobile-top) + 45px);bottom:calc(var(--mobile-dock) + 192px);left:16px;width:calc(100% - 32px);height:auto;transform:none}
+  #silk[data-kind] .silk-instrument{inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 9px #0007)}
+  #silk[data-kind] .silk-arrow{top:0;transform:none;width:44px;height:44px;min-height:44px;background:#082b2ce6}
+  #silk[data-kind] .silk-previous{left:0}#silk[data-kind] .silk-next{right:0}
+  #silk[data-kind] .silk-controls{left:14px;right:14px;bottom:var(--mobile-dock);top:auto;transform:none;width:auto;text-align:center}
+  #silk .silk-techniques{gap:5px;margin-bottom:6px}
+  #silk .silk-techniques button{min-height:40px;flex:1;font-size:11px;padding:7px 5px}
+  #silk .silk-feedback{font-size:10px;line-height:1.4;min-height:28px;margin-bottom:5px;letter-spacing:0}
+  #silk .silk-hint{display:none}
+  #silk .silk-notes{gap:5px;padding-bottom:7px}
+  #silk .silk-note{min-width:0;flex:1;min-height:46px;font-size:12px;padding:8px 4px}
+  #silk[data-kind=guzheng] .silk-note{flex:0 0 44px}
+  #silk .silk-note small{display:none}
+  #silk .silk-picker{margin:0;width:100%;background:#082826ee;backdrop-filter:none}
+  #silk .silk-choice{min-height:44px;padding:8px 5px;font-size:11px}
+
+  /* Learn keeps the image, notes and selector together, without a giant empty row. */
+  #learn[data-practice-kind] .learn-layout{padding:var(--mobile-top) 14px var(--mobile-dock);display:flex;flex-direction:column;gap:12px}
+  #learn[data-practice-kind] .learn-intro{display:none}
+  #learn[data-practice-kind] .lesson-card{flex:none;max-height:42%;padding:12px 14px;overflow-y:auto;background:#082825ed;backdrop-filter:none;border-radius:16px}
+  #learn .lesson-tabs button{font-size:11px;min-height:40px;padding:6px}
+  #learn[data-practice-kind] .lesson-card h3{font-size:23px;line-height:1.12;margin:12px 0 8px}
+  #learn .lesson-card>p{font-size:12px;line-height:1.5;margin-bottom:10px}
+  #learn .lesson-actions .quiet-button{min-height:40px;font-size:11px;padding:8px 12px}
+  #learn .lesson-card output{min-height:16px;font-size:10px;margin-top:9px}
+  #learn[data-practice-kind] .practice-area{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:44px minmax(0,1fr) 48px 52px;gap:8px;min-height:0;flex:1;width:100%;height:auto;margin:0;align-content:center}
+  #learn[data-practice-kind] .practice-caption{grid-column:1;grid-row:1;display:flex;justify-content:center;padding:0 55px;font-size:11px}
+  #learn[data-practice-kind] .practice-count{margin-left:8px}
+  #learn[data-practice-kind] .practice-visual{display:contents}
+  #learn[data-practice-kind] .practice-area{position:relative}
+  #learn[data-practice-kind=guqin] .practice-area,#learn[data-practice-kind=guzheng] .practice-area{grid-template-rows:44px minmax(0,170px) 48px 52px}
+  #learn[data-practice-kind] .practice-instrument{grid-column:1;grid-row:2;align-self:center;position:relative;inset:auto;width:100%;height:100%;max-height:240px;margin:auto}
+  #learn[data-practice-kind=guqin] .practice-instrument,#learn[data-practice-kind=guzheng] .practice-instrument{max-height:150px}
+  #learn[data-practice-kind] .practice-instrument>img{inset:0;width:100%;height:100%;object-fit:contain}
+  #learn[data-practice-kind] .learn-arrow{position:static;grid-column:1;grid-row:1;align-self:center;justify-self:start;transform:none;width:44px;height:44px;background:#082b2ce6}
+  #learn[data-practice-kind] #learn-next{justify-self:end}
+  #learn[data-practice-kind] .practice-keys{grid-column:1;grid-row:3;flex-wrap:nowrap;gap:5px;align-self:stretch;padding:0;align-items:stretch}
+  #learn[data-practice-kind] .practice-key{flex:1;min-width:0;max-width:none;min-height:44px;font-size:12px;padding:7px 4px}
+  #learn[data-practice-kind=guzheng] .practice-key{flex:0 0 44px}
+  #learn .practice-key small{display:none}
+  #learn[data-practice-kind] .learn-picker{grid-column:1;grid-row:4;width:100%;margin:0;align-self:end;background:#082826ee;backdrop-filter:none}
+  #learn[data-practice-kind] .learn-picker button{min-height:44px;font-size:11px;padding:8px 4px}
+  #learn[data-practice-kind] .practice-tip{display:none}
+  #learn .learn-background{filter:none}
+  #learn::before{background:linear-gradient(#041b20aa,#041b2040 55%,#041b20a8)}
+  .gallery-landscape,.silk-background{filter:none}
+  /* Avoid Safari enlarging a focused field and shifting the whole scene. */
+  .audio-area input[type=text],.audio-area #take-name{font-size:16px}
+}
+@media(max-width:360px){
+  body .topbar{padding-left:10px;padding-right:10px;gap:5px}
+  body .topbar .nav-button{padding:8px 9px;font-size:10px}
+  #instruments .gallery-intro h2{font-size:21px}
+  #learn[data-practice-kind] .lesson-card{padding:9px 11px}
+}
+@media(max-width:650px) and (max-height:650px){
+  #sanctuary h1{font-size:23px}#sanctuary h1 span{display:inline}#sanctuary .instruction{font-size:10px}
+  #sanctuary h1 span::before{content:' '}
+  #instruments .instrument-display{bottom:calc(var(--mobile-dock) + 102px)}
+  #instruments .silk-next-link{margin:4px 0 0;min-height:22px;line-height:22px}
+  #learn[data-practice-kind] .learn-layout{gap:6px}
+  #learn[data-practice-kind] .lesson-card{max-height:47%}
+  #learn[data-practice-kind] .lesson-card h3{font-size:19px;margin:7px 0}
+  #learn .lesson-card>p{font-size:11px;line-height:1.4}
+  #learn .lesson-tabs button{min-height:36px;font-size:10px}
+  #learn[data-practice-kind] .practice-area{grid-template-rows:36px minmax(0,1fr) 44px 48px;gap:4px}
+  #learn .learn-arrow{height:36px}
+  #learn .lesson-card output{font-size:9px}
+  #learn[data-practice-kind=pipa] .lesson-card,#learn[data-practice-kind=erhu] .lesson-card{max-height:40%}
+  #learn[data-practice-kind=pipa] .practice-area,#learn[data-practice-kind=erhu] .practice-area{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:36px minmax(0,1fr) 48px;gap:5px}
+  #learn[data-practice-kind=pipa] .practice-caption,#learn[data-practice-kind=erhu] .practice-caption{grid-column:1/-1}
+  #learn[data-practice-kind=pipa] .practice-keys,#learn[data-practice-kind=erhu] .practice-keys{grid-column:2;grid-row:2;flex-wrap:wrap;align-self:center}
+  #learn[data-practice-kind=pipa] .practice-key,#learn[data-practice-kind=erhu] .practice-key{flex:0 0 45%;min-height:44px}
+  #learn[data-practice-kind=pipa] .learn-picker,#learn[data-practice-kind=erhu] .learn-picker{grid-column:1/-1;grid-row:3}
+  #learn[data-practice-kind=pipa] #learn-next,#learn[data-practice-kind=erhu] #learn-next{grid-column:2}
+}

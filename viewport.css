@@ -1,0 +1,53 @@
+/* Each world is exactly the currently visible viewport, including fullscreen. */
+html{scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior-y:none}
+html::-webkit-scrollbar{display:none}
+body{overflow-x:clip}
+#sanctuary,#instruments,#silk{height:100vh;height:100dvh;min-height:0;max-height:none;scroll-snap-align:start;scroll-snap-stop:always;overflow-anchor:none}
+.wordmark .seal{flex:none;width:32px;height:38px;color:#eee8d3;border-color:#b3ceb9;font:25px/1 serif;letter-spacing:0}
+@media(max-width:650px){.wordmark .seal{width:27px;height:33px;font-size:21px}}
+@media(min-width:651px){
+  .instrument-display{height:min(74dvh,740px)}
+  .silk-performance{height:min(52dvh,510px)}
+  .silk-gallery[data-kind=pipa] .silk-performance,.silk-gallery[data-kind=erhu] .silk-performance{height:min(48dvh,480px)}
+}
+@media(min-width:651px) and (max-height:760px){
+  .silk-heading,.silk-gallery[data-kind=pipa] .silk-heading,.silk-gallery[data-kind=erhu] .silk-heading{top:100px}
+  .silk-details,.silk-gallery[data-kind=pipa] .silk-details,.silk-gallery[data-kind=erhu] .silk-details{top:108px}
+  .silk-description{display:none}
+  .silk-controls{bottom:22px;width:min(510px,55%);left:40%}
+  .silk-hint{margin-bottom:5px}.silk-picker{margin-top:3px}
+  .silk-performance,.silk-gallery[data-kind=pipa] .silk-performance,.silk-gallery[data-kind=erhu] .silk-performance{top:43%;height:38dvh}
+  .gallery-bottom{bottom:24px;left:40%}.gallery-description{display:none}
+}
+/* Compact phones retain the playing controls; decorative headings yield space. */
+@media(max-width:650px) and (max-height:650px){
+  .hero-copy h1{font-size:32px}.hero-copy .eyebrow{font-size:8px}.instruction{font-size:9px}
+  .silk-heading h2{display:none}
+  .silk-heading,.silk-gallery[data-kind=pipa] .silk-heading,.silk-gallery[data-kind=erhu] .silk-heading{top:76px}
+  .silk-details,.silk-gallery[data-kind=pipa] .silk-details,.silk-gallery[data-kind=erhu] .silk-details{top:76px}
+  .silk-details h3{font-size:24px;margin-bottom:5px}.silk-meta{display:none}
+  .silk-performance,.silk-gallery[data-kind=pipa] .silk-performance,.silk-gallery[data-kind=erhu] .silk-performance{top:32%;height:24dvh}
+  .silk-controls{bottom:calc(116px + env(safe-area-inset-bottom))}
+  .silk-hint{display:none}.silk-picker{margin-top:3px}
+  .gallery-intro h2{font-size:23px}.instrument-display{height:40dvh;top:43%}
+}
+/* Landscape phones use the width for controls instead of making scenes taller. */
+@media(max-height:550px) and (min-width:651px){
+  .topbar{padding:8px 20px}.garden-name{font-size:17px}.wordmark .wordmark-sub{display:none}
+  .audio-area{width:235px;left:auto;right:16px;bottom:10px}.player{padding:7px 9px}.player-caption{margin-top:5px}
+  .gallery-intro{top:80px;left:24px;max-width:175px}.gallery-intro h2{font-size:25px}.gallery-intro .eyebrow{font-size:7px;margin-bottom:9px}
+  .instrument-story{top:82px;right:22px;width:140px}.instrument-story h3{font-size:24px}.instrument-story>p:not(.place-label),.voice-label{display:none}
+  .instrument-display{height:70dvh;width:48vw;top:49%}
+  .gallery-bottom{bottom:12px;left:32%;max-width:53%}.play-hint,.garden-footnote.silk-next-link{display:none}.instrument-choice{padding:10px;font-size:10px}
+  .silk-heading,.silk-gallery[data-kind=pipa] .silk-heading,.silk-gallery[data-kind=erhu] .silk-heading{top:79px;left:24px}
+  .silk-heading h2{display:none}.silk-eyebrow{font-size:19px}.silk-eyebrow span{font-size:7px}
+  .silk-details,.silk-gallery[data-kind=pipa] .silk-details,.silk-gallery[data-kind=erhu] .silk-details{left:24px;right:auto;top:auto;bottom:20px;width:165px;text-align:left}
+  .silk-details h3{font-size:28px;margin-bottom:8px}.silk-meta{font-size:7px}.silk-description{display:none}
+  .silk-performance,.silk-gallery[data-kind=pipa] .silk-performance,.silk-gallery[data-kind=erhu] .silk-performance{left:32%;top:49%;width:49vw;height:60dvh}
+  .silk-controls{left:auto;right:18px;top:76px;bottom:auto;transform:none;width:38%}
+  .silk-techniques button{padding:6px 8px;font-size:9px}.silk-hint{display:none}.silk-feedback{font-size:8px}
+  .silk-notes{gap:4px;padding-bottom:3px}.silk-note{min-width:34px;padding:4px;font-size:10px}
+  .silk-choice{font-size:10px;padding:7px 8px;min-height:36px}.silk-choice span{display:none}
+  .bottom{bottom:35px}.hero-copy{max-width:55%}h1{font-size:32px}.eyebrow{margin-bottom:10px}.instruction{margin-top:10px}
+  .continue-link{bottom:105px;right:24px;left:auto;transform:none}
+}
