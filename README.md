@@ -18,7 +18,7 @@
   <a href="LICENSE">MIT License</a>
 </p>
 
-![The Jade Gate — artwork from The Listening Garden](assets/jade-gate.png)
+![The Listening Garden Gate scene with its red entrance, glowing letter curtain, and Step into a quieter world heading](screenshots/00-gate-cover.png)
 
 ## A garden that responds to you
 
@@ -45,31 +45,23 @@ Built with **HTML, CSS, vanilla JavaScript, Canvas, SVG, and the Web Audio API**
 
 ## Screenshots
 
-The Red rain scene appears in the video preview above. The following screens show the Silk instruments, a guided lesson, and the soundscape controls. All images are the original 1920 × 1080 captures.
+The Gate scene above is the cover. Explore the chimes, instruments, lesson, and sound controls below. All images remain the original 1920 × 1080 PNGs.
 
-### Silk · Guzheng
+| Chimes · Red rain | Your soundscape |
+| --- | --- |
+| ![Red rain chimes and the Japanese-inspired soundscape](screenshots/01-chimes-red-rain.png) | ![Golden eaves with music, instrument, and animation settings](screenshots/07-soundscape-settings.png) |
 
-![Guzheng with 21 strings, note keys, and the Silk scene controls](screenshots/02-silk-guzheng.png)
+| Silk · Guqin | Silk · Guzheng |
+| --- | --- |
+| ![Guqin with seven strings and playing modes](screenshots/03-silk-guqin.png) | ![Guzheng with 21 strings and note keys](screenshots/02-silk-guzheng.png) |
 
-### Silk · Guqin
-
-![Guqin with seven strings and open, sliding, and harmonic playing modes](screenshots/03-silk-guqin.png)
-
-### Silk · Pipa
-
-![Pipa with its four strings and fret controls](screenshots/04-silk-pipa.png)
-
-### Silk · Erhu
-
-![Erhu with finger-and-bow controls](screenshots/05-silk-erhu.png)
+| Silk · Pipa | Silk · Erhu |
+| --- | --- |
+| ![Pipa with four strings and fret controls](screenshots/04-silk-pipa.png) | ![Erhu with finger-and-bow controls](screenshots/05-silk-erhu.png) |
 
 ### Learn · Guqin
 
 ![Guided Guqin lesson with Touch, Melody, and Keep it steps](screenshots/06-learn-guqin.png)
-
-### Your soundscape
-
-![Golden eaves scene with music and instrument volume, sound, and motion settings](screenshots/07-soundscape-settings.png)
 
 ## Small details, room to play
 
