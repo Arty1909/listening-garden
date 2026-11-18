@@ -9,7 +9,9 @@
 <p align="center">Chinese-inspired musical worlds · Interactive instruments · Made for the browser</p>
 
 <p align="center">
+  <a href="#watch-the-demo">Video</a> ·
   <a href="#explore-the-garden">Explore</a> ·
+  <a href="#screenshots">Screenshots</a> ·
   <a href="#play-your-first-notes">How to play</a> ·
   <a href="#run-locally">Run locally</a> ·
   <a href="PUBLISHING.md">Publish to GitHub Pages</a> ·
@@ -26,6 +28,12 @@ Brush a curtain of letters. Pluck a string. Let a note linger over the water.
 
 Built with **HTML, CSS, vanilla JavaScript, Canvas, SVG, and the Web Audio API**. No framework, package installation, or build step is required.
 
+## Watch the demo
+
+[![Watch The Listening Garden demo: Red rain in the Chimes world](screenshots/01-chimes-red-rain.png)](https://www.youtube.com/watch?v=2gaREXNzofA)
+
+[▶ Watch Listening Garden 🌿 on YouTube](https://www.youtube.com/watch?v=2gaREXNzofA). The image above is a full-resolution screenshot of the Red rain scene; select it to open the video.
+
 ## Explore the garden
 
 | World | What you can do |
@@ -34,6 +42,34 @@ Built with **HTML, CSS, vanilla JavaScript, Canvas, SVG, and the Web Audio API**
 | **Chimes** | Move between Golden eaves, Red rain, and Steppe wind, each with its own tone and note palette. |
 | **Silk** | Explore Guqin, Guzheng, Pipa, and Erhu through plucking, pressing, sliding, and bowing gestures. |
 | **Learn** | Choose an instrument, hear a short phrase, follow the highlighted notes, and record your own interpretation. |
+
+## Screenshots
+
+The Red rain scene appears in the video preview above. The following screens show the Silk instruments, a guided lesson, and the soundscape controls. All images are the original 1920 × 1080 captures.
+
+### Silk · Guzheng
+
+![Guzheng with 21 strings, note keys, and the Silk scene controls](screenshots/02-silk-guzheng.png)
+
+### Silk · Guqin
+
+![Guqin with seven strings and open, sliding, and harmonic playing modes](screenshots/03-silk-guqin.png)
+
+### Silk · Pipa
+
+![Pipa with its four strings and fret controls](screenshots/04-silk-pipa.png)
+
+### Silk · Erhu
+
+![Erhu with finger-and-bow controls](screenshots/05-silk-erhu.png)
+
+### Learn · Guqin
+
+![Guided Guqin lesson with Touch, Melody, and Keep it steps](screenshots/06-learn-guqin.png)
+
+### Your soundscape
+
+![Golden eaves scene with music and instrument volume, sound, and motion settings](screenshots/07-soundscape-settings.png)
 
 ## Small details, room to play
 
